@@ -4,6 +4,7 @@ class Myhomepage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black45,
       appBar: AppBar(
         title: const Text(
           "Myfirstapp",
@@ -12,9 +13,10 @@ class Myhomepage extends StatelessWidget{
       ),
       body:Center(
         child: Container(
+          color: Colors.black45,
           width: 200,
           height: 200,
-          child: Text(
+          child:  const Text(
               "Hello World",
           style: TextStyle(
               fontSize: 55,color: Colors.blue),
