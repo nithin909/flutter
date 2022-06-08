@@ -18,6 +18,14 @@ class MyHomepage2 extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
+                  Text("Roll No"),
+                  Text("Name"),
+                  Text("Class"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
                   Text("1"),
                   Text("Arya"),
                   Text("6"),
