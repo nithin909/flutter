@@ -11,16 +11,17 @@ class Myhomepage extends StatelessWidget{
           style: TextStyle(fontSize: 20,color: Colors.purple),
         ),
       ),
-      body:Center(
-        child: Container(
-          color: Colors.black,
-          width: 200,
-          height: 200,
-          child:  const Text(
-              "Hello World",
+      body:Container(
+        color: Colors.black,
+        // width: 400,
+        // height: 50,
+        child:  Center(
+          child: const Text(
+              "Students",
           style: TextStyle(
-              fontSize: 55,color: Colors.blue,fontFamily: "Font1"),
-        ),
+              fontSize: 30,color: Colors.blue,fontFamily: "Font1"),
+      ),
+
         ),
       ),
     );
