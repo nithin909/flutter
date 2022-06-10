@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Studenttable());
-}
+// void main() {
+//   runApp(Studenttable());
+// }
 
 class Studenttable extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class Studenttable extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.pink[200],
         appBar: AppBar(
           title: const Text("Student Details",style: TextStyle(fontStyle: FontStyle.italic),),
           leading: Icon(Icons.person),

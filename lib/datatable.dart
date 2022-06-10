@@ -4,7 +4,9 @@ import 'package:samplefproject/splash.dart';
 import 'studenttable.dart';
 
 void main() {
-  runApp(Splashscreen());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+      home: Splashscreen()));
 }
 
 class Splashscreen extends StatefulWidget {
@@ -24,10 +26,8 @@ class splashscreen2 extends State {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.pink,
+    return Scaffold(
+        backgroundColor: Colors.pink[200],
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +40,6 @@ class splashscreen2 extends State {
             ],
           ),
         ),
-      ),
     );
   }
 }
