@@ -5,7 +5,7 @@ void main() {
 }
 
 class List2 extends StatelessWidget {
-  final mylist = List.generate(10, (index) => "product $index");
+  final mylist = List.generate(15, (index) => "product $index");
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +30,9 @@ class List2 extends StatelessWidget {
               color: Colors.black,
             );
           },
-            ),
+      ),
+
+
           // ListView.builder(
       //     itemCount: mylist.length,
       //     itemBuilder: (BuildContext context, int index) {
@@ -40,6 +42,7 @@ class List2 extends StatelessWidget {
       //         leading: CircleAvatar(child: Text("O",style: TextStyle(fontWeight: FontWeight.bold),)),
       //       );
       //     }),
-    ));
+    )
+    );
   }
 }
