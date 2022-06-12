@@ -6,7 +6,9 @@ import 'package:splashscreen/splashscreen.dart';
 //import 'package:samplefproject/splashscreen.dart';
 
 void main(){
-  runApp(splashscreen2());
+  runApp(MaterialApp(
+    home: splashscreen2(),
+  ));
 }
 class splashscreen2 extends StatelessWidget{
   const splashscreen2({Key? key}) : super(key: key);

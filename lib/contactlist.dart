@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main(){
-
-  runApp(ContactList());
-}
+// void main(){
+//
+//   runApp(ContactList());
+// }
 
 class ContactList extends StatelessWidget{
   @override
