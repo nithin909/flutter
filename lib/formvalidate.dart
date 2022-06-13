@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'RegisterPage.dart';
 import 'contactlist.dart';
 
 void main(){
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(primarySwatch: Colors.green),
       home:FormValidate()
   ));
 }
@@ -19,57 +22,68 @@ class FormValidate extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        body:Form(
-            key: form,
-            child: ListView(
-              children: [
-                TextFormField(
-                  validator: (text){
-                    if (text == null|| !(text.contains('@')) || text.isEmpty ){
-                      return "Enter a valied Email!";
-                    }
-                    return null;
-                  },
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
+      appBar: AppBar(
+        title: Text("Login",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
+      ),
+        // SizedBox(height: 10,),
+        body:Container(
+          padding: EdgeInsets.all(10),
+          child: Form(
+              key: form,
+              child: ListView(
+                children: [
+                  SizedBox(height: 10,),
+                  TextFormField(
+                    validator: (text){
+                      if (text == null|| !(text.contains('@')) || text.isEmpty ){
+                        return "Enter a valied Email!";
+                      }
+                      return null;
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
                   ),
-                ),
-                TextFormField(
-                  validator: (text){
-                    if (text == null || !(text.length <= 5) || text.isEmpty){
-                      return "Enter a valid password with 5 charectors";
-                    }
-                  },
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'password',
+                  SizedBox(height: 10,),
+                  TextFormField(
+                    validator: (text){
+                      if (text == null || !(text.length <= 5) || text.isEmpty){
+                        return "Enter a valid password with 5 charectors";
+                      }
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'password',
+                    ),
                   ),
-                ),
-                ElevatedButton(onPressed: (){
-                  final isValid = form.currentState!.validate();
-                  if(isValid){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder:
-                            (context) => ContactList()
-                        )
-                    );
-                  }else{
-                      Fluttertoast.showToast(
-                          msg:"Email or password incorrect",
-                          fontSize: 15,
-                          gravity: ToastGravity.TOP,
-                        backgroundColor: Colors.orange
+                  SizedBox(height: 10,),
+                  ElevatedButton(onPressed: (){
+                    final isValid = form.currentState!.validate();
+                    if(isValid){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder:
+                              (context) => ContactList()
+                          )
                       );
-                  }
-                }, child:Text("Submit")),
-                TextButton(onPressed: (){
+                    }else{
+                        Fluttertoast.showToast(
+                            msg:"Email or password incorrect",
+                            fontSize: 15,
+                            gravity: ToastGravity.TOP,
+                          backgroundColor: Colors.orange
+                        );
+                    }
+                  }, child:Text("Submit")),
+                  TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:(context) => RegisterPage()));
 
-                },
-                    child: Text("Not a user register here")
-                )
-              ],
-            )
+                  },
+                      child: Text("Not a user register here")
+                  )
+                ],
+              )
+          ),
         ),
       );
 
