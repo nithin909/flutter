@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'Import.dart';
-
 void main(){
   runApp(gmailDrawer());
 }
@@ -25,20 +23,20 @@ class _gmailDrawerState extends State<gmailDrawer> {
             child: ListView(
               children: [
                 UserAccountsDrawerHeader(
-                  accountName: Text("Bruce"),
-                  accountEmail: Text("Bruce@email.com"),
-                  currentAccountPicture: GestureDetector(
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaP_dnbT8zRQ7Ghgqw8H9b1_xpCUYEjlj7OA&usqp=CAU"),
+                    accountName: Text("Bruce"),
+                    accountEmail: Text("Bruce@email.com"),
+                    currentAccountPicture: GestureDetector(
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaP_dnbT8zRQ7Ghgqw8H9b1_xpCUYEjlj7OA&usqp=CAU"),
+                      ),
+                      onTap: (){
+                        Fluttertoast.showToast(msg: 'Your profile picture');
+                      },
                     ),
-                    onTap: (){
-                      Fluttertoast.showToast(msg: 'Your profile picture');
-                    },
-                  ),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage("https://images.immediate.co.uk/production/volatile/sites/4/2013/04/GettyImages-640318118-c83a508.jpg?quality=90&resize=768,574",)
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage("https://images.immediate.co.uk/production/volatile/sites/4/2013/04/GettyImages-640318118-c83a508.jpg?quality=90&resize=768,574",)
+                      ),
                     ),
-                  ),
                 ),
                 ListTile(
                   title: Text("Home"),
@@ -47,12 +45,6 @@ class _gmailDrawerState extends State<gmailDrawer> {
                 ListTile(
                   title: Text("Import"),
                   leading: Icon(Icons.import_contacts),
-                  onTap: (){
-                    Navigator.of(context).pop();
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => Imports(),
-                    ));
-                  },
                 ),
                 ListTile(
                   title: Text("Gallery"),
@@ -69,7 +61,7 @@ class _gmailDrawerState extends State<gmailDrawer> {
                   height: 10,
                 ),
                 Container(
-                    padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
                     child: Text("communicate",style: TextStyle(fontWeight: FontWeight.bold),)),
 
                 ListTile(

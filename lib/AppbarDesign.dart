@@ -52,6 +52,7 @@ String profilepic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaP_d
                 ),
               decoration: const BoxDecoration(
                 color: Colors.green,
+
               ),
             ),
             ListTile(
