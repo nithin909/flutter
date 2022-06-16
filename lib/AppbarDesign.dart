@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'appbar/Import.dart';
+
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -58,6 +60,11 @@ String profilepic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaP_d
             ListTile(
               title: Text("Homepage"),
               leading: Icon(Icons.home),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => Imports(),
+                ));
+              },
             ),
             Divider(
               height: 10,
@@ -75,6 +82,13 @@ String profilepic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaP_d
             ),
             Divider(
               height: 10,
+            ),
+            ListTile(
+              title: Text("Exit"),
+              leading: Icon(Icons.exit_to_app),
+              onTap: (){
+                Navigator.of(context).pop();
+              },
             ),
           ],
         ),

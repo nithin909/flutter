@@ -40,23 +40,24 @@ class _gmailDrawerState extends State<gmailDrawer> {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Home"),
                   leading: Icon(Icons.home),
                 ),
                 ListTile(
-                  title: Text("Import"),
+                  title: const Text("Import"),
                   leading: Icon(Icons.import_contacts),
                   onTap: (){
+                   // Navigator.of(context).pop();
                     Navigator.of(context).pop();
-                    Navigator.of(context).push(MaterialPageRoute(
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (BuildContext context) => Imports(),
                     ));
                   },
                 ),
                 ListTile(
                   title: Text("Gallery"),
-                  leading: Icon(Icons.browse_gallery),
+                  leading: Icon(Icons.image),
                 ),ListTile(
                   title: Text("Slideshow"),
                   leading: Icon(Icons.slideshow),
@@ -80,6 +81,13 @@ class _gmailDrawerState extends State<gmailDrawer> {
                   title: Text("Send"),
                   leading: Icon(Icons.send),
                 ),
+                ListTile(
+                  title: Text("Exit"),
+                  leading: Icon(Icons.exit_to_app),
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                ),
               ],
             ),
           ),
@@ -88,3 +96,4 @@ class _gmailDrawerState extends State<gmailDrawer> {
     );
   }
 }
+
