@@ -24,11 +24,12 @@ class Homepage extends StatefulWidget{
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 3,
+    return DefaultTabController(
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
             title: Text("My Tabbar"),
-            bottom: TabBar(
+            bottom: const TabBar(
               tabs: [
                 Tab(
                   icon: Icon(Icons.home_filled),
