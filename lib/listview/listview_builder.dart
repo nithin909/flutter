@@ -25,10 +25,10 @@ class _ClistviewState extends State<Clistview> {
     "Pouplation 8.1 million"
   ];
   List<String> images = [
+    "https://image.shutterstock.com/image-photo/red-fort-delhi-india-flag-260nw-1199337631.jpg",
+    "https://images.musement.com/cover/0002/49/london-jpeg_header-148518.jpeg?w=1200&h=630&q=95&fit=crop",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC-DNAGGQBwADmleukYt8GK0J_Waweys_iQ&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC-DNAGGQBwADmleukYt8GK0J_Waweys_iQ&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC-DNAGGQBwADmleukYt8GK0J_Waweys_iQ&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC-DNAGGQBwADmleukYt8GK0J_Waweys_iQ&usqp=CAU",
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-688899881-1519413300.jpg",
   ];
 
   @override
@@ -53,7 +53,8 @@ class _ClistviewState extends State<Clistview> {
                         Text(subtitles2[index]),
                       ],
                     ),
-                    leading: Image(image: NetworkImage(images[index],scale:1.1)),
+                    leading: Container(child: Image(image: NetworkImage(images[index])),
+                      height:100,width: 100,),
                 ),
               );
             }),
