@@ -29,7 +29,7 @@ class _CustTabState extends State<CustTab> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100))),
+            //shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100))),
             title: Center(child: Text("Custom Tabbar")),
             bottom: TabBar(
               indicator: ShapeDecoration(
@@ -38,13 +38,8 @@ class _CustTabState extends State<CustTab> {
               ),
               labelColor: Colors.black,
               tabs: [
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle
-                  ),
-                  child: Tab(
-                    text: 'Chat',
-                  ),
+                Tab(
+                  text: 'Chat',
                 ),
                 Tab(
                   text: 'Status',
