@@ -15,6 +15,14 @@ class gridCustom extends StatelessWidget {
     Icons.person,
     Icons.cached,
   ];
+  List names = [
+    "person",
+    "cache",
+    "person",
+    "cache",
+    "person",
+    "cache",
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,17 +33,18 @@ class gridCustom extends StatelessWidget {
         body: GridView.custom(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
             ),
             childrenDelegate:SliverChildBuilderDelegate((BuildContext, index) {
               return Column(
                 children: [
                   Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(180)),
+                    elevation: 40,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
                     child: Icon(icons[index],size: 50,color: Colors.yellowAccent,),
-                  )
+                  ),
+                  Text(names[index]),
                 ],
               );
             },

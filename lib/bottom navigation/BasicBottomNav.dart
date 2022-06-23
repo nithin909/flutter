@@ -13,22 +13,10 @@ class _BasicNavbarState extends State<BasicNavbar> {
   int _selectedindex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    Icon(
-      Icons.call,
-      size: 150,
-    ),
-    Icon(
-      Icons.camera,
-      size: 150,
-    ),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
-    Icon(
-      Icons.settings,
-      size: 150,
-    ),
+    Icon(Icons.call, size: 150,),
+    Icon(Icons.camera, size: 150,),
+    Icon(Icons.chat, size: 150,),
+    Icon(Icons.settings, size: 150,),
   ];
   void _onItemTapped(int index){
     setState(
@@ -44,7 +32,25 @@ class _BasicNavbarState extends State<BasicNavbar> {
           appBar: AppBar(
             title :Text("Bottom NavBar demo")
           ),
-          body: ,
+          body: Center(
+            child: _pages.elementAt(_selectedindex),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(icon:Icon(Icons.call),
+              label: 'Call',
+              ),
+              BottomNavigationBarItem(icon:Icon(Icons.camera),
+                label: 'Camera',
+              ),
+              BottomNavigationBarItem(icon:Icon(Icons.chat),
+                label: 'Chat',
+              )
+            ],
+            currentIndex: _selectedindex,
+            onTap: _onItemTapped,
+            backgroundColor: Colors.purple,
+          ),
         ),
       );
   }

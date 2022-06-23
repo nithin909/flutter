@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 
 import 'Myhomepage.dart';
 
+void main(){
+  runApp(MaterialApp(
+    home: SplashScreen(),
+  ));
+}
 
 class SplashScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => SplashScreenstate();
-
-}
-
-class SplashScreen extends state{
 
 }
 
