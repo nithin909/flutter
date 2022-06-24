@@ -39,7 +39,7 @@ class Homepage1 extends StatelessWidget{
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: Colors.lightBlue,
+          color: Colors.grey,
           child: Center(child: Text("Welcome", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),)),
         ),
     );
