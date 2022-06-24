@@ -9,26 +9,26 @@ void main(){
 class gridCustom extends StatelessWidget {
   List<IconData> icons = [
     Icons.person,
-    Icons.cached,
-    Icons.person,
-    Icons.cached,
-    Icons.person,
-    Icons.cached,
+    Icons.refresh,
+    Icons.compare_arrows,
+    Icons.rectangle_rounded,
+    Icons.chat,
+    Icons.call,
   ];
   List names = [
-    "person",
-    "cache",
-    "person",
-    "cache",
-    "person",
-    "cache",
+    "My profile",
+    "Book a cab",
+    "Booking Schedule",
+    "Track your cab",
+    "Help & Feedback",
+    "call to transport",
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Custom Grid"),
+          title: Center(child: Text("Menu")),
         ),
         body: GridView.custom(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
