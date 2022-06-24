@@ -7,7 +7,8 @@ import 'Myhomepage.dart';
 void main(){
   runApp(MaterialApp(
     home: SplashScreen(),
-  ));
+   )
+  );
 }
 
 class SplashScreen extends StatefulWidget {
