@@ -18,7 +18,7 @@ class _btmsht2State extends State<btmsht2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sample Bottom sheet"),
+        title: Center(child: Text("Sample Bottom sheet")),
       ),
       body: Center(
         child: ElevatedButton(
@@ -26,8 +26,6 @@ class _btmsht2State extends State<btmsht2> {
             _btmShow(context);
           },
           child:Text("Show Bottom Sheet"),
-
-
         ),
       ),
     );
@@ -47,7 +45,6 @@ void _btmShow(BuildContext cntx){
               child: list1(),
           ),
   );
-
 }
 
 class list1 extends StatelessWidget{
