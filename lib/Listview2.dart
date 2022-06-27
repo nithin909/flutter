@@ -25,10 +25,13 @@ class List2 extends StatelessWidget {
       },
 
           separatorBuilder: (BuildContext context, int index){
-            return Divider(
+            return SizedBox(
               height: 2,
-              color: Colors.black,
             );
+            // return Divider(
+            //   height: 2,
+            //   color: Colors.black,
+            // );
           },
       ),
 

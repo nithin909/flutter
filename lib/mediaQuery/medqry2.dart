@@ -19,7 +19,7 @@ class Mqry extends StatelessWidget{
           children: <Widget> [
             Container(
         width: MediaQuery.of(context).size.width*.5,
-             // height: MediaQuery.of(context).size.height*.5,
+             height: MediaQuery.of(context).size.height*.5,
               decoration: BoxDecoration(
                 color: Colors.red,
               ),
