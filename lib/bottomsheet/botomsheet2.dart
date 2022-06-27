@@ -45,8 +45,7 @@ void _btmShow(BuildContext cntx){
               bottom: 15,
           ),
               child: list1(),
-          )
-
+          ),
   );
 
 }
@@ -66,18 +65,16 @@ class list1 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-          itemCount: titles.length,
-          itemBuilder: (cntx, index){
-            return Card(
-              child: ListTile(
-                title: Text(titles[index]),
-                leading: Icon(icons[index]),
-              ),
-            );
-          }
-      ),
+    return ListView.builder(
+        itemCount: titles.length,
+        itemBuilder: (cntx, index){
+          return Container(
+            child: ListTile(
+              title: Text(titles[index]),
+              leading: Icon(icons[index]),
+            ),
+          );
+        }
     );
   }
 
