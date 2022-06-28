@@ -51,7 +51,6 @@ class _CustTabState extends State<CustTab> {
                   text: 'Settings',
                 ),
               ],
-
             ),
           ),
         ),
