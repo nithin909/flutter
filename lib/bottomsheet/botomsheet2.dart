@@ -35,13 +35,8 @@ class _btmsht2State extends State<btmsht2> {
 void _btmShow(BuildContext cntx){
   showModalBottomSheet(
       context: cntx,
-      builder: (cntx) => Padding(
-          padding: EdgeInsets.only(
-              top: 15,
-              left: 15,
-              right: 15,
-              bottom: 15,
-          ),
+      builder: (cntx) =>Container(
+        height: 150,
               child: list1(),
           ),
   );
