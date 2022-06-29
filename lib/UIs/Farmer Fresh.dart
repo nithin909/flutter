@@ -131,11 +131,7 @@ class _FarmerState extends State<Farmer> {
               SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 200,
-                width: MediaQuery.of(context).size.width * 1,
-                child: Image.asset('assets/images/ffz.jpg'),
-              ),
+              Image.asset('assets/images/ffz.jpg'),
               SizedBox(
                 height: 10,
               ),
@@ -207,7 +203,7 @@ class _FarmerState extends State<Farmer> {
             delegate:
                 SliverChildBuilderDelegate((BuildContext context, int index) {
               return Container(
-                height: 50,
+                //height: 50,
                 color: Colors.black,
                 child: Column(
                   children: [
