@@ -119,7 +119,7 @@ class _FarmerState extends State<Farmer> {
                     ),
                     height: 25,
                     width: 150,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "EXOTIC CUTS",
                         style: TextStyle(color: Colors.green),
@@ -199,10 +199,12 @@ class _FarmerState extends State<Farmer> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               childAspectRatio: 0.5,
+              mainAxisSpacing: 0.5
             ),
             delegate:
                 SliverChildBuilderDelegate((BuildContext context, int index) {
-              return Container(
+              return Card(
+
                 //height: 50,
                 color: Colors.black,
                 child: Column(
@@ -216,6 +218,12 @@ class _FarmerState extends State<Farmer> {
                 ),
               );
             }, childCount: images.length),
+          ),
+          SliverList(
+              delegate: SliverChildListDelegate([
+
+              ]
+              )
           )
         ],
       ),

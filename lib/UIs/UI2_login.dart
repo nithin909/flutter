@@ -12,7 +12,6 @@ class UiLogin1 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body:Container(
-        width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
                   fit:BoxFit.cover,
