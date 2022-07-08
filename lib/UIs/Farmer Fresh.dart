@@ -82,7 +82,7 @@ class _FarmerState extends State<Farmer> {
                         border: Border.all(
                           color: Colors.greenAccent,
                         ),
-                        borderRadius: BorderRadius.all(Radius.circular(20))
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
                     ),
                     height: 20,
                     width: 150,
