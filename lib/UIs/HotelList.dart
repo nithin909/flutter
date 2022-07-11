@@ -173,9 +173,11 @@ class Hotels extends StatelessWidget {
   List hotelimages = [
     "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     "https://media.istockphoto.com/photos/hotel-room-suite-with-view-picture-id627892060?k=20&m=627892060&s=612x612&w=0&h=k6QY-qWNlFbvYhas82e_MoSXceozjrhhgp-krujsoDw=",
+    "https://image.shutterstock.com/image-illustration/modern-sea-view-bedroom-3d-260nw-756956185.jpg",
+    "https://image.made-in-china.com/202f0j00MeUfkNDaAqbw/Middle-East-Furniture-Design-Bedroom-Sets-Modern-Hotel-Room-Furniture.jpg",
   ];
 
-  List<String> Names = ["Awsomeroomnear kakkanad", "Peaceful Room"];
+  List<String> Names = ["Awsomeroomnear kakkanad", "Peaceful Room","Beautyful Room", "Vintage room near Kochi"];
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +251,7 @@ class Rating extends StatelessWidget {
           Icons.star_border,
           color: Colors.amber,
         ),
-        Text("(500 Ratings)"),
+        Text("(400 Ratings)"),
       ],
     ));
   }
