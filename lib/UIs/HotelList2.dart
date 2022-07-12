@@ -75,7 +75,6 @@ class _HotelListState extends State<HotelList> {
               SizedBox(
                 height: 15,
               ),
-              PopularHotels(),
               //HotelScrolleft(),
               SizedBox(
                 height: 15,
@@ -98,10 +97,22 @@ class _HotelListState extends State<HotelList> {
                   SizedBox(height: 10,),
                 ],
               ),
-                HotelPackages(),
             ]),
           ),
+          SliverToBoxAdapter(
+            child: PopularHotels(),
+
+          ),
+
+          SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  HotelPackages(),
+                ]
+              )
+          ),
         ],
+
       ),
     );
   }
@@ -126,18 +137,21 @@ class PopularHotels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
+      height: 290,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-        Text(
-        'Popular Hotels',
-        style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+          'Popular Hotels',
+          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
       ),
+        ),
       Expanded(
           child: SizedBox(
-            height: 350,
+            height: 360,
             child: ListView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
@@ -210,37 +224,57 @@ class HotelPackages extends StatelessWidget {
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
           ),
           Expanded(
-              child: SizedBox(
-                height: 350,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemCount: hotelimages.length,
-                  itemBuilder: (BuildContext context, int index) =>
-                      Card(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: NetworkImage(hotelimages[index]),
-                                  )
-                              ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemCount: hotelimages.length,
+                itemBuilder: (BuildContext context, int index) =>
+                    // Card(
+                    //   child: Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     children: [
+                    //       Container(
+                    //         height: 200,
+                    //         width: 200,
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: BorderRadius.all(Radius.circular(20)),
+                    //             image: DecorationImage(
+                    //               fit: BoxFit.fill,
+                    //               image: NetworkImage(hotelimages[index]),
+                    //             )
+                    //         ),
+                    //       ),
+                    //       SizedBox(height: 10,),
+                    //       Text(Names[index],style: TextStyle(fontWeight: FontWeight.bold),),
+                    //       Text("A five star hotel in kochi"),
+                    //     ],
+                    //   ),
+                    // ),
+                ListTile(
+                  leading: Container(
+                    height: 200,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: NetworkImage(hotelimages[index]),
+                                )
                             ),
-                            SizedBox(height: 10,),
-                            Text(Names[index],style: TextStyle(fontWeight: FontWeight.bold),),
-                            Text("A five star hotel in kochi"),
-                          ],
-                        ),
-                      ),
+                          ),
+                  title: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(Names[index],style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text("A five star hotel in cochin"),
+                      Text("\$180/night", style: TextStyle(color: Colors.blue),)
+                    ],
+                  ),
+                  ),
                 ),
               )
-          ),
+          //),
         ],
       ),
     );
