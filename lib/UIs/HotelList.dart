@@ -177,7 +177,7 @@ class Hotels extends StatelessWidget {
     "https://image.made-in-china.com/202f0j00MeUfkNDaAqbw/Middle-East-Furniture-Design-Bedroom-Sets-Modern-Hotel-Room-Furniture.jpg",
   ];
 
-  List<String> Names = ["Awsomeroomnear kakkanad", "Peaceful Room","Beautyful Room", "Vintage room near Kochi"];
+  List<String> Names = ["Awsome room near kakkanad", "Peaceful Room","Beautyful Room", "Vintage room near Kochi"];
 
   @override
   Widget build(BuildContext context) {

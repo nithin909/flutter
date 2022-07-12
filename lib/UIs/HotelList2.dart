@@ -20,8 +20,8 @@ class _HotelListState extends State<HotelList> {
         slivers: [
           SliverAppBar(
             backgroundColor: Colors.white,
-            floating: true,
-            pinned: true,
+            floating: false,
+            pinned: false,
             title: Text("Hello @rjun", style: TextStyle(color: Colors.grey),),
             actions: [
               Padding(
@@ -137,7 +137,7 @@ class PopularHotels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 290,
+     height: 290,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -163,8 +163,8 @@ class PopularHotels extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 200,
-                    width: 200,
+                    height: 150.0,
+                    width: 150.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       image: DecorationImage(

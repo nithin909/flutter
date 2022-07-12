@@ -194,7 +194,9 @@ class _FarmerState extends State<Farmer> {
             SizedBox(
               height: 10,
             ),
-          ])),
+          ]
+              )
+          ),
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
@@ -203,10 +205,10 @@ class _FarmerState extends State<Farmer> {
             ),
             delegate:
                 SliverChildBuilderDelegate((BuildContext context, int index) {
-              return Card(
-
-                //height: 50,
+              return Container(
                 color: Colors.black,
+                height: 100,
+                width: 100,
                 child: Column(
                   children: [
                     Expanded(child: Image.network(images[index])),
@@ -219,13 +221,17 @@ class _FarmerState extends State<Farmer> {
               );
             }, childCount: images.length),
           ),
-          SliverList(
-              delegate: SliverChildListDelegate([
-
-              ]
-              )
-          )
+          
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: 'Cart'),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Account')
+          
+        ],
+        
       ),
     );
   }
