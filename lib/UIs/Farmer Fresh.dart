@@ -235,9 +235,9 @@ class VegGrid extends StatelessWidget{
                 children: [
                   Container(
                    height: 120,
-                   width: 120,
-                   //  height: MediaQuery.of(context).size.height*3,
-                   //  width: MediaQuery.of(context).size.width*3,
+                   //width: 120,
+                    //height: MediaQuery.of(context).size.height*.35,
+                     width: MediaQuery.of(context).size.width*.3,
                     decoration: BoxDecoration(
                         boxShadow: [BoxShadow(
                           color: Colors.grey,
