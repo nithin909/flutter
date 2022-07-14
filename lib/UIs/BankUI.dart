@@ -207,11 +207,22 @@ class section extends StatelessWidget{
       itemCount: 3,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-          leading: Container(
-            width: 6,
-            color: Colors.red,
+          shape:  RoundedRectangleBorder(
+            side: BorderSide(color: Colors.grey, width: 2),
+            borderRadius: BorderRadius.circular(5),
           ),
-          title: Text("Hello"),
+          leading: Container(
+            color: Colors.red,
+            width: 6,
+          ),
+          title: Text("CWDR/"),
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("54968711325941359746521301"),
+              Text("NPR 10,000")
+            ],
+          ),
         );
       },
 
