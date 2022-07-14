@@ -204,7 +204,7 @@ class section extends StatelessWidget{
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: 3,
+      itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           shape:  RoundedRectangleBorder(
@@ -225,8 +225,6 @@ class section extends StatelessWidget{
           ),
         );
       },
-
-
     );
   }
 
