@@ -36,6 +36,7 @@ class _BasicNavbarState extends State<BasicNavbar> {
             child: _pages.elementAt(_selectedindex),
           ),
           bottomNavigationBar: BottomNavigationBar(
+            showUnselectedLabels: false,
             items: const [
               BottomNavigationBarItem(icon:Icon(Icons.call),
               label: 'Call',
@@ -55,3 +56,4 @@ class _BasicNavbarState extends State<BasicNavbar> {
       );
   }
 }
+
