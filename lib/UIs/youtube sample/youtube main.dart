@@ -83,21 +83,107 @@ void ontapped(int index){
   }
 }
 
-class HomePage extends StatefulWidget{
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 400,
-      color: Colors.blue,
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 60.0),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                  final video = videos[index];
+                  return VideoCard(video: video);
+                },
+                childCount: videos.length,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+
+final List<Video> videos = [
+  Video(
+    id: 'x606y4QWrxo',
+    author: 'Rider',
+    title: 'Look this Zebra',
+    thumbnailUrl:
+    'https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80',
+    duration: '8:20',
+    timestamp: DateTime(2021, 3, 20),
+    viewCount: '10K',
+    likes: '958',
+    dislikes: '4',
+  ),
+  Video(
+    author: 'king',
+    id: 'vrPk6LB9bjo',
+    title: 'Where to Find the Cutest, Most Amazing Animals on the Web',
+    thumbnailUrl:
+    'https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80',
+    duration: '22:06',
+    timestamp: DateTime(2021, 2, 26),
+    viewCount: '8K',
+    likes: '485',
+    dislikes: '8',
+  ),
+  Video(
+    id: 'Look this Lion',
+    author: 'Lion',
+    title: 'Where to Find the Cutest, Most Amazing Animals on the Web',
+    thumbnailUrl:
+    'https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80',
+    duration: '10:53',
+    timestamp: DateTime(2020, 7, 12),
+    viewCount: '18K',
+    likes: '1k',
+    dislikes: '4',
+  ),
+];
+
+
+
+
+class Video {
+  final String id;
+  final String author;
+  final String title;
+  final String thumbnailUrl;
+  final String duration;
+  final DateTime timestamp;
+  final String viewCount;
+  final String likes;
+  final String dislikes;
+
+  const Video({
+    required this.id,
+    required this.author,
+    required this.title,
+    required this.thumbnailUrl,
+    required this.duration,
+    required this.timestamp,
+    required this.viewCount,
+    required this.likes,
+    required this.dislikes,
+  });
+}
+
+
+
+
+
+
+
+
+
+
 
 class explore extends StatelessWidget{
   @override
