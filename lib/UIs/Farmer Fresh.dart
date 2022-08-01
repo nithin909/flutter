@@ -257,5 +257,4 @@ class VegGrid extends StatelessWidget{
         }
     );
   }
-
 }
