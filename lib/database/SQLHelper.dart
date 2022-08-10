@@ -8,7 +8,8 @@ class SQLHelper {
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     title TEXT,
     description TEXT,
-    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+     
     )  
     """);
   }
@@ -22,7 +23,7 @@ class SQLHelper {
     );
   }
 
-  //Createa new item to the db
+  //Create new item to the db
 
   static Future<int> createItem(String title, String? description) async {
     final db = await SQLHelper.db();
@@ -31,18 +32,18 @@ class SQLHelper {
     return id;
   }
 
-  //Read all items inthe table (get Items)
+  //Read all items in the table (get Items)
 
   static Future<List<Map<String,dynamic>>> getItems() async{
-    final db = await SQLHelper.db;
+    final db = await SQLHelper.db();
     return db.query('items', orderBy: "id");
   }
 
-  static Future<int> updateItem(int id, String title, String? descrption) async {
+  static Future<int> updateItem(int id, String title, String? description) async {
     final db = await SQLHelper.db();
     final data = {
       'title': title,
-      'description': descrption,
+      'description': description,
       'createdAt': DateTime.now().toString()
     };
     final result = await db.update('items', data, where: "id = ?", whereArgs: [id]);

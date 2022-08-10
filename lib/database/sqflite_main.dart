@@ -29,7 +29,7 @@ class _SQFHomePageState extends State<SQFHomePage> {
 
   List<Map<String, dynamic>> _journals = [];
 
-  bool _isLoading = true;
+  bool _isLoading = false;
 
   void _refreshJournals() async {
     final data = await SQLHelper.getItems();
@@ -76,14 +76,49 @@ class _SQFHomePageState extends State<SQFHomePage> {
               TextField(
                 controller: _descriptionController,
                 decoration: InputDecoration(hintText: 'Description'),
-              )
+              ),
+              SizedBox(height: 20,),
+            ElevatedButton(
+              onPressed: () async {
+              // save new item
+              if (id == null) {
+                await _addItem();
+              }
+              if (id != null) {
+                await _updateItem(id);
+              }
+              // clear the fields
+                _titleController.text ='';
+              _descriptionController.text = '';
+              Navigator.of(context).pop();
+               }, child: Text(id == null ? 'createnew' : 'update'),
+            ),
+
             ],
           ),
         )
     );
 
   }
+// Insert a new Item to the db
+  Future<void> _addItem() async {
+    await SQLHelper.createItem(_titleController.text, _descriptionController.text);
+    _refreshJournals();
+  }
 
+  //update an existing journal
+  Future<void> _updateItem(int id) async {
+    await SQLHelper.updateItem(id, _titleController.text, _descriptionController.text);
+    _refreshJournals();
+  }
+
+  void _deleteItem(int id) async {
+    await SQLHelper.deleteItem(id);
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text('Successfully deleted a journal!'),
+    ));
+    _refreshJournals();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
